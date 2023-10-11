@@ -1,7 +1,5 @@
 # MKbnb Platform for Accommodation
 
-![MKbnb Logo](https://www.mohamedkadi.com/wp-content/uploads/2023/10/mkbnb.jpg)
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -38,6 +36,6 @@ MKbnb is a Python-based platform for accommodation rentals, inspired by Airbnb. 
 1. Clone the repository from GitHub:
 
    ```bash
-   git clone https://github.com/your-username/mkbnb.git
+   git clone https://github.com/handskadi/mkbnb.git
 
 
