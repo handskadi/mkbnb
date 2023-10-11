@@ -1,12 +1,16 @@
-import json
+#!/usr/bin/python3
+import jsoni
+import cmd
 
 """
-    Creattion a simple flow of serialization/deserialization: 
+    Creattion a simple flow of serialization/deserialization:
     Instance <-> Dictionary <-> JSON string <-> file
 """
+
+
 class Person:
-    """ 
-        This is a base class for Person 
+    """
+        This is a base class for Person
         Args:
             name: (string)
             age: (integer)
@@ -16,13 +20,14 @@ class Person:
         self.name = name
         self.age = age
 
+
 # Create an instance of Person
 person = Person("Wafa", "30")
 
 # Serialize instance to a ditionary
 person_dic = {
-        "name" : person.name,
-        "age" : person.age
+        "name": person.name,
+        "age": person.age
 }
 
 print(person_dic)
@@ -32,7 +37,7 @@ print(person_dic)
 json_string = json.dumps(person_dic)
 print(json_string)
 
-#Deserialize the Json to a dictionary:
+# Deserialize the Json to a dictionary:
 recovered_dic = json.loads(json_string)
 print(recovered_dic)
 
