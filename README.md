@@ -1,6 +1,6 @@
 # MKbnb Platform for Accommodation
 
-![MKbnb Logo](https://example.com/mkbnb-logo.png)
+![MKbnb Logo](https://www.mohamedkadi.com/wp-content/uploads/2023/10/mkbnb.jpg)
 
 ## Table of Contents
 
