@@ -6,7 +6,8 @@
 
 import  uuid
 from  datetime import datetime
-class BaseModel():
+
+class BaseModel:
     """
         BaseModel Class to host ID, Created at, Updated at attributes
 
@@ -17,11 +18,20 @@ class BaseModel():
         """
 
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """ Init baseModel Class """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if kwargs is not None and kwargs != {}:
+            for key in kwargs:
+                if key  == "created_at":
+                    self.__dict__["created_at"] = datetime.strptime(kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
+                elif key == "updated_at":
+                    self.__dict__["updated_at"] = datetime.strptime(kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
+                else:
+                    self.__dict__[key] = kwargs[key]
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """ string representation of an instance"""
@@ -29,15 +39,15 @@ class BaseModel():
 
     def save(self):
         """ updating public instance of updated at """
-        self.update_at = datetime.now()
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """ prepares a dic represenation of the instance """
-        mydict = self.__dict__.copy()
-        mydict['__class__'] = type(self).__name__
-        mydict['created_at'] = mydict['created_at'].isoformat()
-        mydict['updated_at'] = mydict['updated_at'].isoformat()
+        dic = self.__dict__.copy()
+        dic["__class__"] = type(self).__name__
+        dic["created_at"] = dic["created_at"].isoformat()
+        dic["updated_at"] = dic["updated_at"].isoformat()
 
-        return mydict
+        return dic
 
 
