@@ -18,22 +18,26 @@ class BaseModel():
 
 
     def __init__(self):
-        self.id = uuid.uuid4() 
+        """ Init baseModel Class """
+        self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
     def __str__(self):
-        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
+        """ string representation of an instance"""
+        return "[{}] ({}) {}".format(type(self).__name__, self.id, self.__dict__)
 
     def save(self):
+        """ updating public instance of updated at """
         self.update_at = datetime.now()
 
     def to_dict(self):
-        dict = {**self.__dict__}
-        dict['__class__'] = type(self).__name__
-        dict['created_at'] = dict['created_at'].isoformat()
-        dict['updated_at'] = dict['updated_at'].isoformat()
+        """ prepares a dic represenation of the instance """
+        mydict = self.__dict__.copy()
+        mydict['__class__'] = type(self).__name__
+        mydict['created_at'] = mydict['created_at'].isoformat()
+        mydict['updated_at'] = mydict['updated_at'].isoformat()
 
-        return dict
+        return mydict
 
 
