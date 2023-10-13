@@ -37,5 +37,7 @@ MKbnb is a Python-based platform for accommodation rentals, inspired by Airbnb. 
 
    ```bash
    git clone https://github.com/handskadi/mkbnb.git
-
+2. Git tips
+   - git checkout -b new-branch (create and switch)
+   - git push origin new-branch (to push by the name of new-branch
 
