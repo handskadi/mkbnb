@@ -1,0 +1,25 @@
+/*
+ * CSS Syntax:
+ *  @media not|only mediatype and (mediafeature and|or|not mediafeature) {
+ *  CSS-Code;
+ *  }
+*/
+
+/* Extran small devices (Phones) */
+@media only screen and (max-width: 600px) { }
+
+/* Small devices (portrait tablets and lanrge phones */
+@media only screen and (min-width: 600px) { }
+
+/* Medium devices (landscape tablets) */
+@media only screen and (min-width: 768px) { }
+
+/* Large devices (laptops/desktops) */
+@media only screen and (min-width: 992px) { }
+
+/* Extra large devices (large laptops and desktops) */
+@media only screen and (min-width: 1200px) { }
+
+/* Orientation: Portrait / Landscape */
+@media only screen and (orientation: landscape) { }
+
