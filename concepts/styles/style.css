@@ -1,0 +1,21 @@
+header {
+    text-align: center;
+}
+.container {
+    background-color: rgba(255, 174, 0, 0.692);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.item1, .item2, .item3, .item4 {
+    width: 330px;
+    height: 200px;
+    background-color: black;
+    margin: 2px;
+    color: white;
+    font-size: 55px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 200px;
+    border-radius: 20px;
+}
